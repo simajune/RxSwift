@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2379C13021A433C0006D7898 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2379C12F21A433C0006D7898 /* RxSwift.framework */; };
 		750543BD8CCAE915FDCB4243 /* Pods_RxSwiftPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BB176766654C566A37EC3F /* Pods_RxSwiftPlayground.framework */; };
 		AFE13E0180288C6ED87CD5F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB1D89016B09D55E24DBC6D /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -27,7 +26,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2379C13021A433C0006D7898 /* RxSwift.framework in Frameworks */,
 				AFE13E0180288C6ED87CD5F7 /* Foundation.framework in Frameworks */,
 				750543BD8CCAE915FDCB4243 /* Pods_RxSwiftPlayground.framework in Frameworks */,
 			);
