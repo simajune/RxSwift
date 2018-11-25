@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E9C1BDC4403792EA6D2B4CC /* Pods_RxSwiftPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C737E34B399A9A375032EB /* Pods_RxSwiftPlayground.framework */; };
 		AFE13E0180288C6ED87CD5F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB1D89016B09D55E24DBC6D /* Foundation.framework */; };
+		EBCEEBA8AD96D6EE68590DC6 /* Pods_RxSwiftPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2330A762B58A0E3ED11D6F1F /* Pods_RxSwiftPlayground.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EFD0804CB605F3210D47E99 /* Pods-RxSwiftPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground.debug.xcconfig"; sourceTree = "<group>"; };
+		2330A762B58A0E3ED11D6F1F /* Pods_RxSwiftPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB1D89016B09D55E24DBC6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		84EDB040779E183C22C31D80 /* Pods-RxSwiftPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground.release.xcconfig"; sourceTree = "<group>"; };
-		98C737E34B399A9A375032EB /* Pods_RxSwiftPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D5B940FE3FC883A252D48F /* RxSwift.playground */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.playground; path = RxSwift.playground; sourceTree = "<group>"; };
+		E6A9AE1333FAB84ECE0E591E /* Pods-RxSwiftPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground.release.xcconfig"; sourceTree = "<group>"; };
 		FB54A7BC39BA3E916AD91E48 /* RxSwiftPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwiftPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD3DD8589E75308D02270472 /* Pods-RxSwiftPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,7 +26,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE13E0180288C6ED87CD5F7 /* Foundation.framework in Frameworks */,
-				2E9C1BDC4403792EA6D2B4CC /* Pods_RxSwiftPlayground.framework in Frameworks */,
+				EBCEEBA8AD96D6EE68590DC6 /* Pods_RxSwiftPlayground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +39,7 @@
 				FCA87D7660B8DBCBFE874DB4 /* Products */,
 				BE3223B6BBD250339DC0085F /* Frameworks */,
 				99D5B940FE3FC883A252D48F /* RxSwift.playground */,
-				9D48BBB00BC56584BC91A495 /* Pods */,
+				D5F4356518248D006C38F1F2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,22 +51,22 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		9D48BBB00BC56584BC91A495 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				84EDB040779E183C22C31D80 /* Pods-RxSwiftPlayground.release.xcconfig */,
-				FD3DD8589E75308D02270472 /* Pods-RxSwiftPlayground.debug.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BE3223B6BBD250339DC0085F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2E4ED860BCEA7C3081D5F007 /* iOS */,
-				98C737E34B399A9A375032EB /* Pods_RxSwiftPlayground.framework */,
+				2330A762B58A0E3ED11D6F1F /* Pods_RxSwiftPlayground.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5F4356518248D006C38F1F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6A9AE1333FAB84ECE0E591E /* Pods-RxSwiftPlayground.release.xcconfig */,
+				1EFD0804CB605F3210D47E99 /* Pods-RxSwiftPlayground.debug.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		FCA87D7660B8DBCBFE874DB4 /* Products */ = {
@@ -84,10 +84,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19C555D5C8880C087B51F6A7 /* Build configuration list for PBXNativeTarget "RxSwiftPlayground" */;
 			buildPhases = (
-				84541230EC43CB80D5D6E798 /* Check Pods Manifest.lock */,
+				897CA782119905A0FFDC1098 /* [CP] Check Pods Manifest.lock */,
 				C1BF6A354E213347DE978624 /* Sources */,
 				2F0E9DB199262502E9BF824A /* Frameworks */,
-				6F99A58F79FB49995E0DA86D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,34 +124,22 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6F99A58F79FB49995E0DA86D /* Copy Pods Resources */ = {
+		897CA782119905A0FFDC1098 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxSwiftPlayground-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84541230EC43CB80D5D6E798 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -237,7 +224,7 @@
 		};
 		8A02305B065F66AD91AA1160 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84EDB040779E183C22C31D80 /* Pods-RxSwiftPlayground.release.xcconfig */;
+			baseConfigurationReference = E6A9AE1333FAB84ECE0E591E /* Pods-RxSwiftPlayground.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -261,7 +248,7 @@
 		};
 		E5D5DB53E7DA5B93A572725B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD3DD8589E75308D02270472 /* Pods-RxSwiftPlayground.debug.xcconfig */;
+			baseConfigurationReference = 1EFD0804CB605F3210D47E99 /* Pods-RxSwiftPlayground.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
