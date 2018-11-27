@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Installingn_RxSwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Installingn_RxSwiftVersionString[];
+FOUNDATION_EXPORT double Pods_RxSwiftPlaygroundVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_RxSwiftPlaygroundVersionString[];
 

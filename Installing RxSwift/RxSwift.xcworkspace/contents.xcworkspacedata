@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Installingn RxSwift.xcodeproj">
+      location = "group:/Users/pro/Desktop/DevTejay/RxSwift/Installing RxSwift/InstallingRxSwift.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
