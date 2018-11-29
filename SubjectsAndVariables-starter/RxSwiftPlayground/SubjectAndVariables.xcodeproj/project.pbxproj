@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		1CCF464166B2FCF182780C52 /* Pods-RxSwiftPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground.release.xcconfig"; sourceTree = "<group>"; };
 		37C6A6E729CF40D60226E1B6 /* Pods-RxSwiftPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground.debug.xcconfig"; sourceTree = "<group>"; };
-		D200B54C1F93BAD700482053 /* RxSwiftPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D200B54C1F93BAD700482053 /* SubjectAndVariables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubjectAndVariables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D200B54F1F93BAD700482053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D200B5511F93BAD700482053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D200B5541F93BAD700482053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		D200B54D1F93BAD700482053 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D200B54C1F93BAD700482053 /* RxSwiftPlayground.app */,
+				D200B54C1F93BAD700482053 /* SubjectAndVariables.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,9 +103,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D200B54B1F93BAD700482053 /* RxSwiftPlayground */ = {
+		D200B54B1F93BAD700482053 /* SubjectAndVariables */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D200B55E1F93BAD700482053 /* Build configuration list for PBXNativeTarget "RxSwiftPlayground" */;
+			buildConfigurationList = D200B55E1F93BAD700482053 /* Build configuration list for PBXNativeTarget "SubjectAndVariables" */;
 			buildPhases = (
 				CBBDCAF5D9661A1939D1A105 /* [CP] Check Pods Manifest.lock */,
 				D200B5481F93BAD700482053 /* Sources */,
@@ -117,9 +117,9 @@
 			);
 			dependencies = (
 			);
-			name = RxSwiftPlayground;
+			name = SubjectAndVariables;
 			productName = RxSwiftPlayground;
-			productReference = D200B54C1F93BAD700482053 /* RxSwiftPlayground.app */;
+			productReference = D200B54C1F93BAD700482053 /* SubjectAndVariables.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D200B5471F93BAD700482053 /* Build configuration list for PBXProject "RxSwiftPlayground" */;
+			buildConfigurationList = D200B5471F93BAD700482053 /* Build configuration list for PBXProject "SubjectAndVariables" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D200B54B1F93BAD700482053 /* RxSwiftPlayground */,
+				D200B54B1F93BAD700482053 /* SubjectAndVariables */,
 			);
 		};
 /* End PBXProject section */
@@ -177,10 +177,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -339,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -353,10 +355,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CX893E63R7;
+				DEVELOPMENT_TEAM = 3UGB7ZX43H;
 				INFOPLIST_FILE = RxSwiftPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.RxSwiftPlayground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.SubjectAndVariables;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -369,10 +371,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CX893E63R7;
+				DEVELOPMENT_TEAM = 3UGB7ZX43H;
 				INFOPLIST_FILE = RxSwiftPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.RxSwiftPlayground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.SubjectAndVariables;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -382,7 +384,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D200B5471F93BAD700482053 /* Build configuration list for PBXProject "RxSwiftPlayground" */ = {
+		D200B5471F93BAD700482053 /* Build configuration list for PBXProject "SubjectAndVariables" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D200B55C1F93BAD700482053 /* Debug */,
@@ -391,7 +393,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D200B55E1F93BAD700482053 /* Build configuration list for PBXNativeTarget "RxSwiftPlayground" */ = {
+		D200B55E1F93BAD700482053 /* Build configuration list for PBXNativeTarget "SubjectAndVariables" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D200B55F1F93BAD700482053 /* Debug */,
