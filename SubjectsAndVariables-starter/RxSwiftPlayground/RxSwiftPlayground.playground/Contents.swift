@@ -1,52 +1,20 @@
 //: Please build the scheme 'RxSwiftPlayground' first
 import RxSwift
 
-example(of: "PublishSubject") {
-  
-  let quotes = PublishSubject<String>()
-  
-  quotes.onNext(itsNotMyFault)
-  
-  let subscriptionOne = quotes
-    .subscribe {
-      print(label: "1)", event: $0)
-  }
-  
-  quotes.on(.next(doOrDoNot))
-  
-  let subscriptionTwo = quotes
-    .subscribe {
-      print(label: "2)", event: $0)
-  }
-  
-  quotes.onNext(lackOfFaith)
-  
-  subscriptionOne.dispose()
-  
-  quotes.onNext(eyesCanDeceive)
-  
-  quotes.onCompleted()
-  
-  let subscriptionThree = quotes
-    .subscribe {
-      print("3)", $0)
-  }
-
-  quotes.onNext(stayOnTarget)
-
-  subscriptionTwo.dispose()
-  subscriptionThree.dispose()
-}
-
 //example(of: "PublishSubject") {
-//  let quotes = PublishSubject<String>()
 //
-//  quotes.onNext(itsNotMyFault)
+//  let quotes = PublishSubject<String>()
 //
 //  let subscriptionOne = quotes
 //    .subscribe {
 //      print(label: "1)", event: $0)
 //  }
+//
+//  quotes.onNext(itsNotMyFault)
+//  quotes.onCompleted()
+//  subscriptionOne.dispose()
+//
+//
 //  quotes.on(.next(doOrDoNot))
 //
 //  let subscriptionTwo = quotes
@@ -56,6 +24,8 @@ example(of: "PublishSubject") {
 //
 //  quotes.onNext(lackOfFaith)
 //
+//  quotes.onNext(iAmYourFather)
+//
 //  subscriptionOne.dispose()
 //
 //  quotes.onNext(eyesCanDeceive)
@@ -64,17 +34,69 @@ example(of: "PublishSubject") {
 //
 //  let subscriptionThree = quotes
 //    .subscribe {
-//      print(label: "3)", event: $0)
+//      print("3)", $0)
+//  }
+//
+//  quotes.onNext(stayOnTarget)
+//
+//  subscriptionTwo.dispose()
+//  subscriptionThree.dispose()
+//}
+
+//example(of: "BehaviorSubject") {
+//
+//  let disposeBag = DisposeBag()
+//
+//  let quotes = BehaviorSubject(value: iAmYourFather)
+//
+//  let subscriptionOne = quotes
+//    .subscribe{
+//      print(label: "1)", event: $0)
 //  }
 //
 //
 //
+//  quotes.subscribe{
+//    print(label: "2)", event: $0)
+//  }
+//  .disposed(by: disposeBag)
+//
+//  quotes.onError(Quote.neverSaidThat)
 //
 //}
 
+example(of: "ReplaySubject") {
+  let disposeBag = DisposeBag()
+  
+  let subject = ReplaySubject<String>.create(bufferSize: 2)
+  
+  subject.onNext(useTheForce)
+  
+  subject.subscribe{
+    print(label: "1)", event: $0)
+  }
+  .disposed(by: disposeBag)
+  
+  subject.onNext(theForceIsStrong)
+  
+//  subject.onNext(iAmYourFather)
+  
+  subject.subscribe{
+    print(label: "2)", event: $0)
+  }
+  .disposed(by: disposeBag)
+  
+}
 
 
-
+example(of: "Variable") {
+  
+  let disposeBag = DisposeBag()
+  
+  let variable = Variable(mayTheForceBeWithYou)
+  
+  print(variable.value)
+}
 
 
 /*:
