@@ -65,37 +65,45 @@ import RxSwift
 //
 //}
 
-example(of: "ReplaySubject") {
-  let disposeBag = DisposeBag()
-  
-  let subject = ReplaySubject<String>.create(bufferSize: 2)
-  
-  subject.onNext(useTheForce)
-  
-  subject.subscribe{
-    print(label: "1)", event: $0)
-  }
-  .disposed(by: disposeBag)
-  
-  subject.onNext(theForceIsStrong)
-  
-//  subject.onNext(iAmYourFather)
-  
-  subject.subscribe{
-    print(label: "2)", event: $0)
-  }
-  .disposed(by: disposeBag)
-  
-}
+//example(of: "ReplaySubject") {
+//  let disposeBag = DisposeBag()
+//
+//  let subject = ReplaySubject<String>.create(bufferSize: 2)
+//
+//  subject.onNext(useTheForce)
+//
+//  subject.subscribe{
+//    print(label: "1)", event: $0)
+//  }
+//  .disposed(by: disposeBag)
+//
+//  subject.onNext(theForceIsStrong)
+//
+////  subject.onNext(iAmYourFather)
+//
+//  subject.subscribe{
+//    print(label: "2)", event: $0)
+//  }
+//  .disposed(by: disposeBag)
+//
+//}
 
+////Observable 연습
+example(of: "Observable") {
+  let test1: Observable<String> = Observable<String>.just("TJTJTJ")
+  let test2: Observable<Array> = Observable<Array>.of([1,2,4,5])
+  
+  test1.subscribe(onNext:{
+    print($0)
+  })
 
-example(of: "Variable") {
+  test1.subscribe{
+    print($0)
+  }
   
-  let disposeBag = DisposeBag()
-  
-  let variable = Variable(mayTheForceBeWithYou)
-  
-  print(variable.value)
+  test2.subscribe{
+    print($0)
+  }
 }
 
 
