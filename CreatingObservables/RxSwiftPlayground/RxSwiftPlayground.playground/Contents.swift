@@ -8,6 +8,8 @@ example(of: "creating observables") {
   let sequelTrilogy = Observable.from([episodeVII, episodeVIII, episodeIX])
 }
 
+
+
 /*:
  Copyright (c) 2014-2018 Razeware LLC
  
