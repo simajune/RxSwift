@@ -92,6 +92,7 @@ import RxSwift
 example(of: "Observable") {
   let test1: Observable<String> = Observable<String>.just("TJTJTJ")
   let test2: Observable<Array> = Observable<Array>.of([1,2,4,5])
+  let test3 = Observable.of("TJ", "Good")
   
   test1.subscribe(onNext:{
     print($0)
@@ -104,6 +105,10 @@ example(of: "Observable") {
   test2.subscribe{
     print($0)
   }
+  
+  test3.subscribe(onNext: {
+    print($0)
+  })
 }
 
 
