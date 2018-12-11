@@ -1,7 +1,24 @@
 //: Please build the scheme 'RxSwiftPlayground' first
 import RxSwift
 
-
+example(of: "ignoreElements") {
+  let disposebag = DisposeBag()
+  
+  let cannedProject = PublishSubject<String>()
+  
+  cannedProject
+    .ignoreElements()
+    .subscribe{
+      print($0)
+  }
+  .disposed(by: disposebag)
+  
+  cannedProject.onNext(landOfDroids)
+  cannedProject.onNext(wookieWorld)
+  cannedProject.onNext(detours)
+  
+  cannedProject.onCompleted()
+}
 
 /*:
  Copyright (c) 2014-2018 Razeware LLC
