@@ -20,6 +20,84 @@ example(of: "ignoreElements") {
   cannedProject.onCompleted()
 }
 
+
+example(of: "elementAt") {
+  let disposeBag = DisposeBag()
+  
+  let quotes = PublishSubject<String>()
+  
+  quotes
+  .elementAt(2)
+    .subscribe(onNext: {
+      print($0)
+    })
+  .disposed(by: disposeBag)
+  
+  quotes.onNext(mayTheOdds)
+  quotes.onNext(liveLongAndProsper)
+  quotes.onNext(mayTheForce)
+}
+
+example(of: "filter") {
+  let disposeBag = DisposeBag()
+  
+  Observable.from(tomatometerRatings)
+    .filter { movie in
+      movie.rating >= 90
+  }
+    .subscribe(onNext: {
+      print($0)
+    })
+  .disposed(by: disposeBag)
+}
+
+example(of: "skipWhile") {
+  let disposeBag = DisposeBag()
+  
+  Observable.from(tomatometerRatings)
+    .skipWhile{ movie in
+      movie.rating < 80
+  }
+    .subscribe(onNext: {
+      print($0)
+    })
+  .disposed(by: disposeBag)
+}
+
+example(of: "skipUntil") {
+  let disposeBag = DisposeBag()
+  
+  let subject = PublishSubject<String>()
+  let trigger = PublishSubject<Void>()
+  
+  subject
+  .skipUntil(trigger)
+    .subscribe(onNext: {
+      print($0)
+    })
+  .disposed(by: disposeBag)
+  
+  subject.onNext(episodeI.title)
+  subject.onNext(episodeII.title)
+  subject.onNext(episodeIII.title)
+  
+  trigger.onNext(())
+  
+  subject.onNext(episodeIV.title)
+}
+
+example(of: "distinctUntilChanged") {
+  let disposeBag = DisposeBag()
+  
+  Observable<Droid>.of(.R2D2, .C3PO, .C3PO, .R2D2)
+  .distinctUntilChanged()
+    .subscribe(onNext: {
+      print($0)
+    })
+  .disposed(by: disposeBag)
+
+}
+
 /*:
  Copyright (c) 2014-2018 Razeware LLC
  
