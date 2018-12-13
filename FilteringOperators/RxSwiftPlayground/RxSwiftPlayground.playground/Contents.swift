@@ -1,101 +1,54 @@
 //: Please build the scheme 'RxSwiftPlayground' first
 import RxSwift
 
-example(of: "ignoreElements") {
-  let disposebag = DisposeBag()
+example(of: "Challenge 1") {
   
-  let cannedProject = PublishSubject<String>()
+  let disposeBag = DisposeBag()
   
-  cannedProject
-    .ignoreElements()
-    .subscribe{
-      print($0)
+  let contacts = [
+    "603-555-1212": "Florent",
+    "212-555-1212": "Junior",
+    "408-555-1212": "Marin",
+    "617-555-1212": "Scott"
+  ]
+  
+  func phoneNumber(from inputs: [Int]) -> String {
+    var phone = inputs.map(String.init).joined()
+    
+    phone.insert("-", at: phone.index(
+      phone.startIndex,
+      offsetBy: 3)
+    )
+    
+    phone.insert("-", at: phone.index(
+      phone.startIndex,
+      offsetBy: 7)
+    )
+    
+    return phone
   }
-  .disposed(by: disposebag)
   
-  cannedProject.onNext(landOfDroids)
-  cannedProject.onNext(wookieWorld)
-  cannedProject.onNext(detours)
+  let input = PublishSubject<Int>()
   
-  cannedProject.onCompleted()
-}
-
-
-example(of: "elementAt") {
-  let disposeBag = DisposeBag()
+  // Add your code here
   
-  let quotes = PublishSubject<String>()
   
-  quotes
-  .elementAt(2)
-    .subscribe(onNext: {
-      print($0)
-    })
-  .disposed(by: disposeBag)
+  input.onNext(0)
+  input.onNext(603)
   
-  quotes.onNext(mayTheOdds)
-  quotes.onNext(liveLongAndProsper)
-  quotes.onNext(mayTheForce)
-}
-
-example(of: "filter") {
-  let disposeBag = DisposeBag()
+  input.onNext(2)
+  input.onNext(1)
   
-  Observable.from(tomatometerRatings)
-    .filter { movie in
-      movie.rating >= 90
+  // Confirm that 7 results in "Contact not found", and then change to 2 and confirm that Junior is found
+  input.onNext(7)
+  
+  "5551212".forEach {
+    if let number = (Int("\($0)")) {
+      input.onNext(number)
+    }
   }
-    .subscribe(onNext: {
-      print($0)
-    })
-  .disposed(by: disposeBag)
-}
-
-example(of: "skipWhile") {
-  let disposeBag = DisposeBag()
   
-  Observable.from(tomatometerRatings)
-    .skipWhile{ movie in
-      movie.rating < 80
-  }
-    .subscribe(onNext: {
-      print($0)
-    })
-  .disposed(by: disposeBag)
-}
-
-example(of: "skipUntil") {
-  let disposeBag = DisposeBag()
-  
-  let subject = PublishSubject<String>()
-  let trigger = PublishSubject<Void>()
-  
-  subject
-  .skipUntil(trigger)
-    .subscribe(onNext: {
-      print($0)
-    })
-  .disposed(by: disposeBag)
-  
-  subject.onNext(episodeI.title)
-  subject.onNext(episodeII.title)
-  subject.onNext(episodeIII.title)
-  
-  trigger.onNext(())
-  
-  subject.onNext(episodeIV.title)
-}
-
-example(of: "distinctUntilChanged") {
-  let disposeBag = DisposeBag()
-  
-  Observable<Droid>.of(.R2D2, .C3PO, .C3PO, .R2D2)
-  .distinctUntilChanged()
-    .subscribe(onNext: {
-      print($0)
-    })
-  .disposed(by: disposeBag)
-
+  input.onNext(9)
 }
 
 /*:
