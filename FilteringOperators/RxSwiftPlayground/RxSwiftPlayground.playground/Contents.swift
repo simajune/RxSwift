@@ -32,15 +32,31 @@ example(of: "Challenge 1") {
   
   // Add your code here
   
+  input
+    .skipWhile{ $0 == 0 }
+    .filter{ $0 < 10 }
+    .take(10)
+    .toArray()
+    .subscribe(onNext: {
+      let phone = phoneNumber(from: $0)
+      
+      if let contact = contacts[phone] {
+        print("Dialing \(contact) (\(phone))")
+      }else {
+        print("Contact not found")
+      }
+    })
+  .disposed(by: disposeBag)
+  
   
   input.onNext(0)
-  input.onNext(603)
+  input.onNext(607)
   
   input.onNext(2)
   input.onNext(1)
   
   // Confirm that 7 results in "Contact not found", and then change to 2 and confirm that Junior is found
-  input.onNext(7)
+  input.onNext(2)
   
   "5551212".forEach {
     if let number = (Int("\($0)")) {
