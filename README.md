@@ -7,4 +7,4 @@
 
 ### Chapter 1. Hello RxSwift
 
-#### 	[RxSwift소개 및 비동기 프로그래밍이란](https://github.com/simajune/RxSwift/tree/master/Documents/Ch1-1)
+​	[RxSwift소개 및 비동기 프로그래밍이란](https://github.com/simajune/RxSwift/tree/master/Documents/Ch1-1)
