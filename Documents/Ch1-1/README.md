@@ -4,9 +4,9 @@
 
 ### 1. RxSwift란
 
-```
-RxSwift is a library for composing asynchronous and event-based code by using observable sequences and functional style operators, allowing for parameterized execution via schedulers.
-```
+> **RxSwift is a library for composing asynchronous and event-based code by using observable sequences and functional style operators, allowing for parameterized execution via schedulers.**
+
+
 
 - RxSwift에 대한 이론이다. RxSwift는 관찰 가능한 시퀀스와 함수 스타일 연산자를 사용하여 비동기 및 이벤트 기반 코드를 작성하고 스케줄러를 통해 매개 변수화 된 실행을 허용하는 라이브러리라는데 잘 이해가 안간다. 그냥 대강 풀어보면 코드를 통해 반응된걸 감지하고 그걸 통해 다른 동작을 하는 비동기 형태의 라이브러리라고 생각하면 될거 같다. 사실 이걸 보기 전에 강의를 몇가지 봤지만 이해가 쉽지 않아 이론을 다시 공부하려고 한다. 
 
@@ -28,4 +28,4 @@ RxSwift is a library for composing asynchronous and event-based code by using ob
 - 일반적인 클래스의 대부분은 비동기적이고 모든 UI 요소들도 비동기이기 때문에 앱 코드 전체가 어떤 순서로 실행하는 아는 것은 불가능하다.결국 앱은 유저의 입력, 네트워크 활동 또는 다른 OS의 이벤트와 같이 외부적인 요소에 따라 다르게 실행된다. 아마 앱이 실행될 때마다 이런 외부적인 요소들 때문에 코드가 순서가 다를 것이다. 
 - 엄청 읽었는데 결국 좋은 비동기는 만들기 어렵다 라는걸 알리는 글이었다. 
 
-<img src="https://github.com/simajune/RxSwift/tree/master/Documents/Ch1-1/Asynchronous.png?raw=true" width="800px" height="220px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-1/Asynchronous.png?raw=true" height="220px"/>
