@@ -1,5 +1,5 @@
 # RxSwift
-<img src="https://github.com/simajune/RxSwift/blob/master/Resources/RxSwiftTitle.png?raw=true" height="200px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Resources/RxSwiftTitle.png?raw=true" width="900px"/>
 
 ###
 
