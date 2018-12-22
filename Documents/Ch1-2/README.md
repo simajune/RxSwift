@@ -113,14 +113,6 @@ return "Portrait is the best!"
 - 마지막으로 next 이벤트를 구독하여 위에서 발생한 String을 가지는 Alert 메세지를 스크린에 보여줄 것이다.
 - **Operators**는 항상 구성 가능하다. 즉, 항상 데이터를 입력으로 가져와서 결과로 출력을 한다. 그래서 단일연산자보다 훨씬 쉽게 그것들을 많은 방법으로 연결할 수 있다. 
 
-
-
-
-
-
-
-
-
 - 그러나 실제로는 병렬로 실행되는 코드를 작성하는 것은 다소 복잡하다. 왜냐하면 각각 병렬로 실행되는 코드가 어떤것이 먼저 끝나고 업데이트되는지 알기 어렵기 때문이다. 이걸 해결하기 위해서 대부분은 프로젝트에서 애플이 제공하는 비동기 API를 많이 사용하고 아래의 것을 사용했을 것이다. 
   - NotificationCenter: 사용자의 기기가 방향을 바꾸거나 키보드와 같은 이벤트가 발생할 때마다 사용했을 것이다.
   - Delegate: 클래스와 클래스간의 언제 끝날지 모를 때 많이 사용한다. 
@@ -184,3 +176,20 @@ override func viewDidAppear(_ animated: Bool) {
   - Resilient(복원성): 각각의 동작은 격리되어 정의되고 유연한 에러 복구를 제공한다.
   - Elastic(탄성?): 코드는 다양한 작업을 다루고, 종종 lazy 기반의 데이터를 수집하고 이벤트를 조절하고 자료를 공유하는 기능을 한다.
   - 메세지 기반: 구성요소는 재사용성과 고립 그리고 라이프사이클과 클래스 분리를 향상시키는 메세지 기반의 통신을 사용한다.
+
+
+
+#### 4. SChedulers
+
+- **Schedulers는** Rx에서 dispatch queue와 같은 기능을 한다.
+- **Schedulers는** 굳이 사용하지 않아도 미리 정의된 것으로 커버 가능하다.
+- **Scehdulers는** 매우 강력하다. 예를 들어 GrandDispatch를 사용하는 GrandDispatchQueueScheduler에 주어진 큐에서 코드 실행을 딕렬화하는 이벤트를 관찰하도록 지정할 수 있다. ConcurrentDispatchQueueScheduler는 코드를 동시에 실행할 수 있다.
+- OperationQueueScheduler를 사용하면 주어진 NSOperationQueue에서 구독 일정을 잡을 수 있다.
+- RxSwift로 인해 다른 구독자에게 동일한 구독의 여러 작업을 예약할 수 있다.
+
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/5.png?raw=true" height="220px"/>
+
+- 위에 다이어그램을 읽으려면 색칠된 부분을 순서대로 따라가면 됩니다. 다른 **Schedulers** 에 걸쳐 1,2,3이 실행된다.
+  - 파란 네트워크의 코드 (1)은 Schduler의 기반한 커스텀 NSOperation로 작동합니다.
+  - 이 블럭에 의해 출력된 데이터는 동시 백그라운드 GDC 대기열에 있는 다른 스케쥴러에서 실행되는 다음 블럭(2)의 입력으로 사용된다.
+  - 마지막으로 파란색 코드(3)의 마지막 부분은 UI를 새 데이터로 업데이트하기 위해 주 쓰레드 Scheduler에서 예약된다.
