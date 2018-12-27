@@ -4,11 +4,19 @@ import RxSwift
 example(of: "creating observables") {
   let mostPopular: Observable<String> = Observable<String>.just(episodeV)
   let originalTrilogy = Observable.of(episodeIV, episodeV, episodeVI)
-  let prequelTrilogy = Observable.of([episodeI, episodeII, episodeIII])
-  let sequelTrilogy = Observable.from([episodeVII, episodeVIII, episodeIX])
+//  let prequelTrilogy = Observable.of([episodeI, episodeII, episodeIII])
+//  let sequelTrilogy = Observable.from([episodeVII, episodeVIII, episodeIX])
 }
 
-
+example(of: "just, of, from") {
+  // 1
+  let one = 1
+  let two = 2
+  let three = 3
+  
+  //2
+  let observable:Observable<Int> = Observable<Int>.just(one)
+}
 
 /*:
  Copyright (c) 2014-2018 Razeware LLC

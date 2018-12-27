@@ -21,7 +21,7 @@
   - A completed event: 이 이벤트는 이벤트 시퀀스가 성공하여 종료될 때 발생한다. 이것은 Observable이 성공하여 완료되었을 때 발생하고 그 이외에는 발생하지 않는다.
   - A error event: 이 이벤트는 에러가 발생하거나 값을 방출하지 못했을 경우 발생한다.
 
-<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/1.png?raw=true" height="220px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/1.png?raw=true" width="800px"/>
 
 - 위의 그림은 시간 순차적으로 이벤트가 발생할 때 정수값을 방출하는 Observable을 시각화한 것이다.
 
@@ -29,7 +29,7 @@
 
 
 
-<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/2.png?raw=true" height="220px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/2.png?raw=true" width="800px"/>
 
 - 실 상황에 대한 아이디어를 얻기 위해 2가지의 다른 Observable을 살펴보자.
 
@@ -65,7 +65,7 @@
   - 그 후에 방향 변화를 다루는 콜백 메소드가 필요하다. 이것은 디바이스 현재 방향을 잡고 최신 값에 반응한다.
 - 이 디바이스 방향에 대한 시퀀스는 끝이 없다. 방향을 바꾸지 않아서 이벤트가 발생하지 않을 수는 있지만 그럼에도 Oberver는 계속해서 이벤트를 기다리고 있는 중이기 때문이다.
 
-<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/3.png?raw=true" height="220px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/3.png?raw=true" width="800px"/>
 
 - 위에 내용을 RxSwift 코드로 나타내면 아래와 같다.
 
@@ -89,7 +89,7 @@
 - 분명하게 결정론적이고 사칙연산이라는 미리 정의된 명령대로 입력하여 결과를 얻을 수 있다. 
 - 이와 유사하게 **Rx Operators**도 Obervable을 통해 입력과 출력을 최종 값이 표현될 때까지 결정적으로 처리할 수 있다. 그런 다음 최종 결과 값을 사용하여 부작용을 유발할 수 있다. 
 
-<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/4.png?raw=true" height="220px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/4.png?raw=true" width="800px"/>
 
 ```swift
 UIDevice.rx.orientation 
@@ -121,7 +121,7 @@ return "Portrait is the best!"
 - 일반적인 클래스의 대부분은 비동기적이고 모든 UI 요소들도 비동기이기 때문에 앱 코드 전체가 어떤 순서로 실행하는 아는 것은 불가능하다.결국 앱은 유저의 입력, 네트워크 활동 또는 다른 OS의 이벤트와 같이 외부적인 요소에 따라 다르게 실행된다. 아마 앱이 실행될 때마다 이런 외부적인 요소들 때문에 코드가 순서가 다를 것이다. 
 - 엄청 읽었는데 결국 좋은 비동기는 만들기 어렵다 라는걸 알리는 글이었다. 
 
-<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-1/Asynchronous.png?raw=true" height="220px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-1/Asynchronous.png?raw=true" width ="800px"/>
 
 #### 비동기 프로그래밍 용어
 
@@ -187,7 +187,7 @@ override func viewDidAppear(_ animated: Bool) {
 - OperationQueueScheduler를 사용하면 주어진 NSOperationQueue에서 구독 일정을 잡을 수 있다.
 - RxSwift로 인해 다른 구독자에게 동일한 구독의 여러 작업을 예약할 수 있다.
 
-<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/5.png?raw=true" height="220px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch1-2/5.png?raw=true" width="800px"/>
 
 - 위에 다이어그램을 읽으려면 색칠된 부분을 순서대로 따라가면 됩니다. 다른 **Schedulers** 에 걸쳐 1,2,3이 실행된다.
   - 파란 네트워크의 코드 (1)은 Schduler의 기반한 커스텀 NSOperation로 작동합니다.
