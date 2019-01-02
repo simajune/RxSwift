@@ -1,68 +1,37 @@
 //: Please build the scheme 'RxSwiftPlayground' first
 import RxSwift
 
-example(of: "creating observables") {
-  let mostPopular: Observable<String> = Observable<String>.just(episodeV)
-  let originalTrilogy = Observable.of(episodeIV, episodeV, episodeVI)
-//  let prequelTrilogy = Observable.of([episodeI, episodeII, episodeIII])
-//  let sequelTrilogy = Observable.from([episodeVII, episodeVIII, episodeIX])
-}
-
-example(of: "subscribe") {
-  // 1
-  let one = 1
-  let two = 2
-  let three = 3
+//example(of: "creating observables") {
+//  let mostPopular: Observable<String> = Observable<String>.just(episodeV)
+//  let originalTrilogy = Observable.of(episodeIV, episodeV, episodeVI)
+////  let prequelTrilogy = Observable.of([episodeI, episodeII, episodeIII])
+////  let sequelTrilogy = Observable.from([episodeVII, episodeVIII, episodeIX])
+//}
+example(of: "create") {
+  let disposeBag = DisposeBag()
   
-  //2
-//  let observable:Observable<Int> = Observable<Int>.just(one)
-  let observable = Observable<Int>.of(one, two, three)
+  enum myError: Error {
+    case anError
+  }
   
-  observable.subscribe( onNext: { event in
-    print(event)
-  })
-}
-
-example(of: "empty") {
-  let observable = Observable<Void>.empty()
-  
-  observable
+  Observable<String>.create { observer in
+    // 1
+    observer.onNext("1")
+    // 2
+    observer.onError(myError.anError)
+    observer.onCompleted()
+    // 3
+    observer.onNext("?")
+    // 4
+    return Disposables.create()
+  }
     .subscribe(
-      onNext: { event in
-      print(event)
-    },
-      onCompleted: {
-      print("completed")
-    }
-  )
-}
-
-example(of: "range") {
-  // 1
-  let observable = Observable<Int>.range(start: 1, count: 10)
-  observable
-    .subscribe(onNext: { i in
-      // 2
-      print(i)
-      let n = Double(i)
-      let fibonacci = Int(((pow(1.61803, n) - pow(0.61803, n)) /
-        2.23606).rounded())
-      print(fibonacci)
-    }
-  )
-}
-
-example(of: "never") {
-  let observable = Observable<Any>.never()
-  observable
-    .subscribe(
-      onNext: { element in
-        print(element)
-    },
-      onCompleted: {
-        print("Completed")
-    }
-  )
+      onNext: { print($0) },
+      onError: { print($0) },
+      onCompleted: { print("Completed") },
+      onDisposed: { print("Disposed") }
+    )
+    .addDisposableTo(disposeBag)
 }
 
 /*:

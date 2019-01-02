@@ -17,5 +17,5 @@
 * [Observable이란](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-1)
 * [Observable의 생명주기](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-2)
 * [Observable 만들기](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-3)
-
 * [Observable 구독](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-4)
+* [Disposing과 Terminating](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-5)
