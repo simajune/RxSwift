@@ -8,14 +8,61 @@ example(of: "creating observables") {
 //  let sequelTrilogy = Observable.from([episodeVII, episodeVIII, episodeIX])
 }
 
-example(of: "just, of, from") {
+example(of: "subscribe") {
   // 1
   let one = 1
   let two = 2
   let three = 3
   
   //2
-  let observable:Observable<Int> = Observable<Int>.just(one)
+//  let observable:Observable<Int> = Observable<Int>.just(one)
+  let observable = Observable<Int>.of(one, two, three)
+  
+  observable.subscribe( onNext: { event in
+    print(event)
+  })
+}
+
+example(of: "empty") {
+  let observable = Observable<Void>.empty()
+  
+  observable
+    .subscribe(
+      onNext: { event in
+      print(event)
+    },
+      onCompleted: {
+      print("completed")
+    }
+  )
+}
+
+example(of: "range") {
+  // 1
+  let observable = Observable<Int>.range(start: 1, count: 10)
+  observable
+    .subscribe(onNext: { i in
+      // 2
+      print(i)
+      let n = Double(i)
+      let fibonacci = Int(((pow(1.61803, n) - pow(0.61803, n)) /
+        2.23606).rounded())
+      print(fibonacci)
+    }
+  )
+}
+
+example(of: "never") {
+  let observable = Observable<Any>.never()
+  observable
+    .subscribe(
+      onNext: { element in
+        print(element)
+    },
+      onCompleted: {
+        print("Completed")
+    }
+  )
 }
 
 /*:
