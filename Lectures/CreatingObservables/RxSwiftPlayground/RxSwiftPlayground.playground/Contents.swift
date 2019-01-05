@@ -7,6 +7,54 @@ import RxSwift
 ////  let prequelTrilogy = Observable.of([episodeI, episodeII, episodeIII])
 ////  let sequelTrilogy = Observable.from([episodeVII, episodeVIII, episodeIX])
 //}
+
+example(of: "never") {
+  let disposeBag = DisposeBag()
+
+  let observable = Observable<Void>.never()
+
+  observable.do(onSubscribe: { print("on Subscribe")},
+                onSubscribed: { print("on Subscribed")},
+                onDispose: { print("on Dispose")}
+  )
+    .subscribe(onNext: { (element) in
+      print(element)
+    }, onCompleted: {
+      print("on Completed")
+    })
+  .disposed(by: disposeBag)
+}
+
+example(of: "never1") {
+  let observable = Observable<Any>.never()
+  
+  // 1. 문제에서 요구한 dispose bag 생성
+  let disposeBag = DisposeBag()
+  
+  // 2. 그냥 뚫고 지나간다는 do의 onSubscribe 에다가 구독했음을 표시하는 문구를 프린트하도록 함
+  observable.do(
+    onSubscribe: { print("Subscribed")}
+    ).subscribe(          // 3. 그리고 subscribe 함
+      onNext: { (element) in
+        print(element)
+    },
+      onCompleted: {
+        print("Completed")
+    }
+    )
+    .disposed(by: disposeBag)      // 4. 앞서 만든 쓰레기봉지에 버려줌
+}
+
+example(of: "debug") {
+  let observable = Observable<Any>.never()
+  let disposeBag = DisposeBag()
+  
+  observable
+    .debug("debug 확인")
+    .subscribe()
+    .disposed(by: disposeBag)
+}
+
 example(of: "create") {
   let disposeBag = DisposeBag()
   
@@ -59,6 +107,8 @@ example(of: "deferred") {
   }
   
 }
+
+
 
 /*:
  Copyright (c) 2014-2018 Razeware LLC
