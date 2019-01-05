@@ -19,3 +19,4 @@
 * [Observable 만들기](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-3)
 * [Observable 구독](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-4)
 * [Disposing과 Terminating](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-5)
+* [Observable Factory 만들기](https://github.com/simajune/RxSwift/tree/master/Documents/Ch2-6)
