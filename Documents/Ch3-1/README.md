@@ -47,21 +47,5 @@ example(of: "PublishSubject") {
   - PublisherSubject: 비어있는 상태로 시작하여 단 하나의 새로운 요소만 구독자에게 방출
   - BehavoirSubject: 초기값으로 시작하여 새 요소 또는 최신 요소를 새 구독자에게 방출
   - ReplaySubject: 버퍼 사이즈로 시작하여 그 사이즈에 버퍼 사이즈까지의 요소의 버퍼를 유지해서 그것을 구독자에게 방출
-  - 
-
-```swift
-example(of: "debug") {
-  let observable = Observable<Any>.never()
-  let disposeBag = DisposeBag()
-  
-  observable
-    .debug("debug 확인")
-    .subscribe()
-    .disposed(by: disposeBag)
-}
---------------------------------------------------------------
---- Example of: debug ---
-2019-01-05 18:45:20.712: debug 확인 -> subscribed
-2019-01-05 18:45:20.713: debug 확인 -> isDisposed
-```
+  - Variable: BehaviorSubject을 감싸고 현재값을 상태로 보존한다. 그리고 최신/초기값을 새로운 구독자에게 방출
 
