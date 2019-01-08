@@ -15,9 +15,9 @@ example(of: "PublishSubject") {
     subject.onNext("Is anyone listening?") 
     //3
     let subscriptionOne = subject 
-  						  .subscribe(onNext: { string in 
-                                              print(string) 
-											  })
+		.subscribe(onNext: { string in 
+    		print(string) 
+	})
     //4
     subject.on(.next("1"))
     //5
