@@ -3,7 +3,7 @@
 - PublisherSubject는 구독이 끝나거나 completed 이벤트와 error이벤트로 끝날 때까지 구독자가 구독한 시점부터 새로운 이벤트를 알리가 원할 때 사용된다.
 - 아래 그래프를 보자
 
-<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch3-1/1.png?raw=true" width="800px"/>
+<img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch3-2/1.png?raw=true" width="800px"/>
 
 * 첫번째 구독자는 1번 이벤트가 발생한 후에 구독을 시작했기 때문에 1번에 대한 이벤트를 받을 수 없고 구독 이후에 발생한 2번과 3번의 이벤트만 받을 수 있다.
 * 두번째 구독자는 2번 이벤트가 발생하기 전까지 구독을 하지 않고 그 이후에 구독을 했기 때문에 3번의 이벤트만 받을 수 있다.

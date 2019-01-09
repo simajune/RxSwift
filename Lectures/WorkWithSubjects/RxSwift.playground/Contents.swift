@@ -7,7 +7,7 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 exampleOf(description: "PublishSubject") {
   let subject = PublishSubject<String>()
-  
+
   let subscriptionOne = subject.subscribe( onNext: { string in
     print(string)
   })
@@ -22,45 +22,34 @@ exampleOf(description: "PublishSubject") {
   subject.onNext("5")
   subscriptionTwo.dispose()
   let disposeBag = DisposeBag()
-  
+
   subject.subscribe{ event in
     print("3)", event.element ?? event)
   }.disposed(by: disposeBag)
-  
+
   subject.onNext("?")
-  
-  
 }
 
-//exampleOf(description: "PublishSubject") {
-//    let subject = PublishSubject<String>()
-//
-//    subject.subscribe{
-//        print($0)
-//    }
-//
-//    enum error: Error {
-//        case Test
-//    }
-//
-//    subject.on(.next("Hello"))
-////    subject.onError(error.Test)
-//    subject.onNext("World")
-//
-////    let newSubscription = subject.subscribe {
-////        print("New subscription: ", $0)
-////    }
-//
-//    let newSubscription = subject.subscribe(onNext: {
-//        print("New subscription: \($0)")
-//    })
-//
-//    subject.onNext("What's up?")
-//
-//    newSubscription.dispose()
-//    subject.onNext("Still there?")
-//}
-
+// 1
+enum MyError: Error {
+  case anError
+}
+// 2
+func SubjectPrint<T: CustomStringConvertible>(label: String, event: Event<T>) {
+//  print(label, event.element ?? event.error ?? event)
+}
+// 3
+exampleOf(description: "BehaviorSubject") {
+  // 4
+  let subject = BehaviorSubject(value: "Initial value")
+  let disposeBag = DisposeBag()
+  
+  subject
+    .subscribe {
+      
+    }
+    .addDisposableTo(disposeBag)
+}
 
 //exampleOf(description: "BehaviorSubject") {
 //    let subject = BehaviorSubject(value: "a")
@@ -75,7 +64,7 @@ exampleOf(description: "PublishSubject") {
 //        print(#line, $0)
 //    }
 //}
-//
+
 //exampleOf(description: "ReplaySubject") {
 //    let subject = ReplaySubject<Int>.create(bufferSize: 2)
 //
