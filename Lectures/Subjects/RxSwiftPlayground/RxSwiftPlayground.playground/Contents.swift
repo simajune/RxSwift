@@ -5,31 +5,56 @@ import RxSwift
 enum MyError: Error {
   case anError
 }
-// 3
-example(of: "BehaviorSubject") {
-  // 4
-  let subject = BehaviorSubject(value: "initial Event")
+//// 3
+//example(of: "BehaviorSubject") {
+//  // 4
+//  let subject = BehaviorSubject(value: "initial Event")
+//  let disposeBag = DisposeBag()
+//
+//  let initialSubscription = subject.subscribe(onNext: {
+//    print("Line number is \(#line) and value is", $0)
+//  })
+//
+//
+//
+//  subject.onNext("second Event")
+//
+//  let secondSubscription  = subject.subscribe(onNext: {
+//    print("Line number is \(#line) and value is", $0)
+//  })
+//
+//  subject.onCompleted()
+//
+//  subject.subscribe({ event in
+//    print("Line number is \(#line) and value is", event)
+//  })
+//}
+
+example(of: "ReplaySubject") {
+  // 1
+  let subject = ReplaySubject<String>.create(bufferSize: 1)
   let disposeBag = DisposeBag()
-
-  let initialSubscription = subject.subscribe(onNext: {
-    print("Line number is \(#line) and value is", $0)
-  })
+  // 2
+  subject.onNext("1")
+  subject.onNext("2")
   
+  subject
+    .subscribe {
+      print((#line), $0)
+    }
+    .addDisposableTo(disposeBag)
   
+  subject.onNext("3")
+  // 3
   
-  subject.onNext("second Event")
+  subject.dispose()
+  subject
+    .subscribe {
+      print((#line), $0)
+    }
+    .addDisposableTo(disposeBag)
   
-  let secondSubscription  = subject.subscribe(onNext: {
-    print("Line number is \(#line) and value is", $0)
-  })
-  
-  subject.onCompleted()
-  
-  subject.subscribe({ event in
-    print("Line number is \(#line) and value is", event)
-  })
 }
-
 
 /*:
  Copyright (c) 2014-2018 Razeware LLC
