@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		1CCF464166B2FCF182780C52 /* Pods-RxSwiftPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground.release.xcconfig"; sourceTree = "<group>"; };
 		37C6A6E729CF40D60226E1B6 /* Pods-RxSwiftPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground.debug.xcconfig"; sourceTree = "<group>"; };
-		D200B54C1F93BAD700482053 /* ChallengeBlackJack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeBlackJack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D200B54C1F93BAD700482053 /* BlackJack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackJack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D200B54F1F93BAD700482053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D200B5511F93BAD700482053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D200B5541F93BAD700482053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		D200B54D1F93BAD700482053 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D200B54C1F93BAD700482053 /* ChallengeBlackJack.app */,
+				D200B54C1F93BAD700482053 /* BlackJack.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,23 +103,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D200B54B1F93BAD700482053 /* ChallengeBlackJack */ = {
+		D200B54B1F93BAD700482053 /* BlackJack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D200B55E1F93BAD700482053 /* Build configuration list for PBXNativeTarget "ChallengeBlackJack" */;
+			buildConfigurationList = D200B55E1F93BAD700482053 /* Build configuration list for PBXNativeTarget "BlackJack" */;
 			buildPhases = (
 				CBBDCAF5D9661A1939D1A105 /* [CP] Check Pods Manifest.lock */,
 				D200B5481F93BAD700482053 /* Sources */,
 				D200B5491F93BAD700482053 /* Frameworks */,
 				D200B54A1F93BAD700482053 /* Resources */,
 				C0802E6598AB8E435771AEB4 /* [CP] Embed Pods Frameworks */,
+				0A5F3D99540028493C9C8204 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ChallengeBlackJack;
+			name = BlackJack;
 			productName = RxSwiftPlayground;
-			productReference = D200B54C1F93BAD700482053 /* ChallengeBlackJack.app */;
+			productReference = D200B54C1F93BAD700482053 /* BlackJack.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +139,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D200B5471F93BAD700482053 /* Build configuration list for PBXProject "ChallengeBlackJack" */;
+			buildConfigurationList = D200B5471F93BAD700482053 /* Build configuration list for PBXProject "BlackJack" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D200B54B1F93BAD700482053 /* ChallengeBlackJack */,
+				D200B54B1F93BAD700482053 /* BlackJack */,
 			);
 		};
 /* End PBXProject section */
@@ -170,6 +171,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A5F3D99540028493C9C8204 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPlayground/Pods-RxSwiftPlayground-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C0802E6598AB8E435771AEB4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,7 +398,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D200B5471F93BAD700482053 /* Build configuration list for PBXProject "ChallengeBlackJack" */ = {
+		D200B5471F93BAD700482053 /* Build configuration list for PBXProject "BlackJack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D200B55C1F93BAD700482053 /* Debug */,
@@ -391,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D200B55E1F93BAD700482053 /* Build configuration list for PBXNativeTarget "ChallengeBlackJack" */ = {
+		D200B55E1F93BAD700482053 /* Build configuration list for PBXNativeTarget "BlackJack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D200B55F1F93BAD700482053 /* Debug */,
