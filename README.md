@@ -37,4 +37,4 @@
 ### Chapter 5. Filtering Operator
 
 * [Ignoring Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-1)
-* [Skip Operator]()
+* [Skip Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-2)
