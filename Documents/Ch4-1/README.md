@@ -24,3 +24,8 @@ private let images = Variable<[UIImage]>([])
 * disposeBag은 ViewController에 소유되었기 때문에 ViewController가 해제되면 이 ViewController에 있는 모든 Observables는 dispose된다.
 
 <img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch4-1/2.png?raw=true" width ="800px"/>
+
+* 위의 그림과 같이 하면 Rx 구독 메모리 관리가 매우 쉬워진다. 간단히 bag에 던져 놓다가 ViewController가 폐기되면 bag에 던져 놓았던 모든 것이 dispose될 것이다.
+* 하지만 root ViewController이고 앱이 종료되기 전에 릴리즈가 해제된 특정 ViewController에서는 발생하지 않는다. 그때는 분명한 폐기 매커니증을 통해 dispose해야 하고 이건 이번 장에선 배우지 않는다.
+* 첫째로, 앱은 항상 같은 사진 기반으로 콜라쥬를 만들 것이다. 
+
