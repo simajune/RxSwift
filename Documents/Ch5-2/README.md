@@ -81,12 +81,6 @@ exampleOf(description: "skipWhile") {
 
 <img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch5-2/3.png?raw=true" width="800px"/>
 
-////////////////////////////////////////
-
-
-
-
-
 * 위의 그림을 보면 중간의 트리거가 발생하기전까지는 skip하다가 트리거가 발생한 후에는 이벤트가 발생한다.
 * 코드를 통해 알아보자.
 
