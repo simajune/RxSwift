@@ -1,8 +1,6 @@
 # RxSwift
 <img src="https://github.com/simajune/RxSwift/blob/master/Resources/RxSwiftTitle.png?raw=true" width="900px"/>
 
-#
-
 ## Contents
 
 
@@ -38,3 +36,4 @@
 
 * [Ignoring Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-1)
 * [Skip Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-2)
+* [Taking Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-3)

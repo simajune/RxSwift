@@ -5,28 +5,40 @@ import RxSwift
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-exampleOf(description: "skipUntil") {
+exampleOf(description: "Take") {
   let disposeBag = DisposeBag()
   // 1
-  let subject = PublishSubject<String>()
-  let trigger = PublishSubject<String>()
-  // 2
-  subject
-    .skipUntil(trigger)
+  Observable.of(1, 2, 3, 4, 5, 6)
+    // 2
+    .take(3)
     .subscribe(onNext: {
       print($0)
     })
     .addDisposableTo(disposeBag)
-  
-  subject.onNext("1")
-  subject.onNext("2")
-  subject.onNext("3")
-  subject.onNext("4")
-  
-  trigger.onNext("trigger")
-  
-  subject.onNext("5")
 }
+
+//exampleOf(description: "") {
+//  let disposeBag = DisposeBag()
+//  // 1
+//  let subject = PublishSubject<String>()
+//  let trigger = PublishSubject<String>()
+//  // 2
+//  subject
+//    .skipUntil(trigger)
+//    .subscribe(onNext: {
+//      print($0)
+//    })
+//    .addDisposableTo(disposeBag)
+//
+//  subject.onNext("1")
+//  subject.onNext("2")
+//  subject.onNext("3")
+//  subject.onNext("4")
+//
+//  trigger.onNext("trigger")
+//
+//  subject.onNext("5")
+//}
 
 //exampleOf(description: "IgnoreElements") {
 //  // 1
