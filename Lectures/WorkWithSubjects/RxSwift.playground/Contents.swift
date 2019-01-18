@@ -5,16 +5,21 @@ import RxSwift
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-exampleOf(description: "Take") {
+exampleOf(description: "TakeUntil") {
   let disposeBag = DisposeBag()
   // 1
-  Observable.of(1, 2, 3, 4, 5, 6)
-    // 2
-    .take(3)
+  let subject = PublishSubject<String>()
+  let trigger = PublishSubject<String>()
+  // 2
+  subject
+    .takeUntil(trigger)
     .subscribe(onNext: {
       print($0)
     })
     .addDisposableTo(disposeBag)
+  // 3
+  subject.onNext("1")
+  subject.onNext("2")
 }
 
 //exampleOf(description: "") {
