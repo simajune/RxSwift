@@ -6,28 +6,42 @@ import RxSwift
 PlaygroundPage.current.needsIndefiniteExecution = true
 
 
-exampleOf(description: "mapWithIndex") {
+exampleOf(description: "distinctUntilChanged") {
   let disposeBag = DisposeBag()
   // 1
-  Observable.of(1, 2, 3, 4, 5, 6)
-    // 2
-    .mapWithIndex { integer, index in
-      index > 2 ? integer * 2 : integer
+  let formatter = NumberFormatter()
+  formatter.numberStyle = .spellOut
+  // 2
+  Observable<NSNumber>.of(10, 110, 20, 200, 210, 310)
+    // 3
+    .distinctUntilChanged { a, b in
+      // 4
+      guard let aWords = formatter.string(from: a)?.components(separatedBy: " "),
+        let bWords = formatter.string(from: b)?.components(separatedBy: " ")
+          else {
+          return false
+      }
+      var containsMatch = false
+      // 5
+      
+//      print(aWords)
+//      print(bWords)
+      for aWord in aWords {
+        for bWord in bWords {
+          if aWord == bWord {
+            containsMatch = true
+            break
+          }
+        }
+      }
+      return containsMatch
     }
+    // 4
     .subscribe(onNext: {
       print($0)
     })
     .addDisposableTo(disposeBag)
-  
-  Observable.of(1, 2, 3)
-    // 2
-    .mapWithIndex { integer, index in
-      index > 1 ? integer * 2 : integer
-    }
-    .subscribe(onNext: {
-      print($0)
-    })
-    .addDisposableTo(disposeBag)
+      
 }
 
 

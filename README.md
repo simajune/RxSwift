@@ -37,12 +37,14 @@
 * [Ignoring Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-1)
 * [Skip Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-2)
 * [Taking Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-3)
+* [Distinct Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-4)
 
 ### Chapter 6. Filtering Operators in Practice
 
-* [Filtering Operator 연습하기]()
+* [Filtering Operator 연습하기(추후 업데이트 예정)]()
 
 ### Chapter 7. Transforming Operator
 
 * [Transforming element](https://github.com/simajune/RxSwift/tree/master/Documents/Ch7-1)
+* [Transforming inner observable](https://github.com/simajune/RxSwift/tree/master/Documents/Ch7-2)
 
