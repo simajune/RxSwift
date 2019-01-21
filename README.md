@@ -37,3 +37,12 @@
 * [Ignoring Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-1)
 * [Skip Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-2)
 * [Taking Operator](https://github.com/simajune/RxSwift/tree/master/Documents/Ch5-3)
+
+### Chapter 6. Filtering Operators in Practice
+
+* [Filtering Operator 연습하기]()
+
+### Chapter 7. Transforming Operator
+
+* [Transforming element](https://github.com/simajune/RxSwift/tree/master/Documents/Ch7-1)
+

@@ -5,22 +5,60 @@ import RxSwift
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-exampleOf(description: "TakeUntil") {
+
+exampleOf(description: "mapWithIndex") {
   let disposeBag = DisposeBag()
   // 1
-  let subject = PublishSubject<String>()
-  let trigger = PublishSubject<String>()
-  // 2
-  subject
-    .takeUntil(trigger)
+  Observable.of(1, 2, 3, 4, 5, 6)
+    // 2
+    .mapWithIndex { integer, index in
+      index > 2 ? integer * 2 : integer
+    }
     .subscribe(onNext: {
       print($0)
     })
     .addDisposableTo(disposeBag)
-  // 3
-  subject.onNext("1")
-  subject.onNext("2")
+  
+  Observable.of(1, 2, 3)
+    // 2
+    .mapWithIndex { integer, index in
+      index > 1 ? integer * 2 : integer
+    }
+    .subscribe(onNext: {
+      print($0)
+    })
+    .addDisposableTo(disposeBag)
 }
+
+
+//example(of: "toArray") {
+//  let disposeBag = DisposeBag()
+//  // 1
+//  Observable.of("A", "B", "C")
+//    // 2
+//    .toArray()
+//    .subscribe(onNext: {
+//      print($0)
+//    })
+//    .addDisposableTo(disposeBag)
+//}
+
+//exampleOf(description: "TakeUntil") {
+//  let disposeBag = DisposeBag()
+//  // 1
+//  let subject = PublishSubject<String>()
+//  let trigger = PublishSubject<String>()
+//  // 2
+//  subject
+//    .takeUntil(trigger)
+//    .subscribe(onNext: {
+//      print($0)
+//    })
+//    .addDisposableTo(disposeBag)
+//  // 3
+//  subject.onNext("1")
+//  subject.onNext("2")
+//}
 
 //exampleOf(description: "") {
 //  let disposeBag = DisposeBag()
