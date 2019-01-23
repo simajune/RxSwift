@@ -48,3 +48,12 @@
 * [Transforming element](https://github.com/simajune/RxSwift/tree/master/Documents/Ch7-1)
 * [Transforming inner observable](https://github.com/simajune/RxSwift/tree/master/Documents/Ch7-2)
 
+### Chapter 8. Transforming Operators in Practice
+
+* [Transforming Operator 연습하기(추후 업데이트 예정)]()
+
+### Chapter 9. Combining Operator
+
+* [Prefixing and concatenating](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-1)
+* 
+

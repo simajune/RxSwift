@@ -5,44 +5,140 @@ import RxSwift
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
+struct Student{
+  var score: Variable<Int>
+}
 
-exampleOf(description: "distinctUntilChanged") {
-  let disposeBag = DisposeBag()
-  // 1
-  let formatter = NumberFormatter()
-  formatter.numberStyle = .spellOut
-  // 2
-  Observable<NSNumber>.of(10, 110, 20, 200, 210, 310)
-    // 3
-    .distinctUntilChanged { a, b in
-      // 4
-      guard let aWords = formatter.string(from: a)?.components(separatedBy: " "),
-        let bWords = formatter.string(from: b)?.components(separatedBy: " ")
-          else {
-          return false
-      }
-      var containsMatch = false
-      // 5
-      
-//      print(aWords)
-//      print(bWords)
-      for aWord in aWords {
-        for bWord in bWords {
-          if aWord == bWord {
-            containsMatch = true
-            break
-          }
-        }
-      }
-      return containsMatch
-    }
-    // 4
-    .subscribe(onNext: {
+exampleOf(description: "concat one element") {
+  let numbers = Observable.of(4, 5, 6)
+  
+  Observable.just(1).concat(numbers)
+    .subscribe(onNext:{
       print($0)
     })
-    .addDisposableTo(disposeBag)
-      
 }
+
+//exampleOf(description: "concat") {
+//  let koreans = Observable.of("태준", "지오", "로이")
+//  let american = Observable.of("Mike", "Ryan", "Charlotte")
+//
+//  let observable = koreans.concat(american)
+//
+//  observable.subscribe(onNext:{
+//    print($0)
+//  })
+//}
+
+
+//exampleOf(description: "observable.concat") {
+//  let first = Observable.of(1, 2, 3)
+//  let second = Observable.of(4, 5, 6)
+//
+//  let observable = Observable.concat([first, second])
+//
+//  observable.subscribe(onNext: {
+//    print($0)
+//  })
+//}
+
+
+//exampleOf(description: "startWith") {
+//  let numbers = Observable.of(2, 3, 4)
+//
+//  let observable = numbers.startWith(1)
+//
+//  observable.subscribe(onNext: {
+//    print($0)
+//  })
+//}
+
+//exampleOf(description: "flatMapLatest") {
+//  let disposeBag = DisposeBag()
+//  let ryan = Student(score: Variable(80))
+//  let charlotte = Student(score: Variable(90))
+//  let student = PublishSubject<Student>()
+//
+//  student.asObservable()
+//    .flatMapLatest{
+//      $0.score.asObservable()
+//    }.subscribe(onNext: {
+//      print($0)
+//    }).addDisposableTo(disposeBag)
+//
+//  student.onNext(ryan)
+//  ryan.score.value = 85
+//  student.onNext(charlotte)
+//  charlotte.score.value = 80
+//  ryan.score.value = 40
+//  student.onNext(ryan)
+//}
+
+
+
+//exampleOf(description: "flatMap") {
+//  let disposeBag = DisposeBag()
+//  // 1
+//  let ryan = Student(score: Variable(80))
+//  let charlotte = Student(score: Variable(90))
+//  // 2
+//  let student = PublishSubject<Student>()
+//
+//  student.asObserver()
+//    .flatMap {
+//      $0.score.asObservable()
+//    }
+//    .subscribe(onNext: {
+//      print($0)
+//    })
+//    .addDisposableTo(disposeBag)
+//
+//  student.onNext(ryan)
+//  charlotte.score.value = 88
+//  student.onNext(charlotte)
+//  ryan.score.value = 95
+//}
+
+
+
+
+
+//exampleOf(description: "distinctUntilChanged") {
+//  let disposeBag = DisposeBag()
+//  // 1
+//  let formatter = NumberFormatter()
+//  formatter.numberStyle = .spellOut
+//  // 2
+//  Observable<NSNumber>.of(10, 110, 20, 200, 210, 310)
+//    // 3
+//    .distinctUntilChanged { a, b in
+//      // 4
+//      guard let aWords = formatter.string(from: a)?.components(separatedBy: " "),
+//        let bWords = formatter.string(from: b)?.components(separatedBy: " ")
+//          else {
+//          return false
+//      }
+//      var containsMatch = false
+//      // 5
+//
+////      print(aWords)
+////      print(bWords)
+//      for aWord in aWords {
+//        for bWord in bWords {
+//          if aWord == bWord {
+//            containsMatch = true
+//            break
+//          }
+//        }
+//      }
+//      return containsMatch
+//    }
+//    // 4
+//    .subscribe(onNext: {
+//      print($0)
+//    })
+//    .addDisposableTo(disposeBag)
+//
+//}
 
 
 //example(of: "toArray") {
