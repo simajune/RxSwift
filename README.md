@@ -55,5 +55,5 @@
 ### Chapter 9. Combining Operator
 
 * [Prefixing and concatenating](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-1)
-* 
+* [Merging](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-2)
 
