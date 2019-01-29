@@ -30,7 +30,7 @@
 
 ### Chapter 4. Observables and Subject in Practice
 
-* [Observable & Subject 연습하기(추후 업데이트 예정)](https://github.com/simajune/RxSwift/tree/master/Documents/Ch4-1)
+* [Observable & Subject 연습하기(추후 업데이트 예정)](https://github.com/simajune/RxSwift/tree/master/Lectures/ObservablesSubjectsAndVariablesInPractice)
 
 ### Chapter 5. Filtering Operator
 
