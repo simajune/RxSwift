@@ -56,4 +56,6 @@
 
 * [Prefixing and concatenating](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-1)
 * [Merging](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-2)
+* [Combining elements](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-3)
+* 
 

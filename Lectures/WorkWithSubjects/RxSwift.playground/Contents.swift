@@ -5,18 +5,80 @@ import RxSwift
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-struct Student{
-  var score: Variable<Int>
+
+exampleOf(description: "Zip") {
+    enum Weather {
+        case cloudy
+        case sunny
+    }
+    
+    let left = Observable<Weather> = Observable.of(.sunny, .cloudy, .cloudy)
+    
 }
 
-exampleOf(description: "concat one element") {
-  let numbers = Observable.of(4, 5, 6)
-  
-  Observable.just(1).concat(numbers)
-    .subscribe(onNext:{
-      print($0)
-    })
-}
+//exampleOf(description: "merge") {
+//    let left = PublishSubject<String>()
+//    let right = PublishSubject<String>()
+//
+//    let source = Observable.of(left.asObservable(), right.asObservable())
+//
+//    let observable = source.merge()
+//    let disposable = observable.subscribe(onNext: { value in
+//        print(value)
+//    })
+//
+//    var leftValues = ["Berlin", "Munich", "Frankfurt"]
+//    var rightValues = ["Madrid", "Barcelona", "Valencia"]
+//    repeat {
+//        if arc4random_uniform(2) == 0 {
+//            if (!leftValues.isEmpty){
+//                left.onNext("left: " + leftValues.removeFirst())
+//            }
+//        }else if(!rightValues.isEmpty){
+//            right.onNext("right: " + rightValues.removeFirst())
+//        }
+//    }while !leftValues.isEmpty || !rightValues.isEmpty
+//    disposable.dispose()
+//}
+
+//exampleOf(description: "Merge1") {
+//    let left = PublishSubject<String>()
+//    let right = PublishSubject<String>()
+//    var disposeBag = DisposeBag()
+//
+//    var leftValues = ["Berlin", "Munich", "Frankfurt"]
+//    var rightValues = ["Madrid", "Barcelona", "Valencia"]
+//
+//    Observable.merge(left.asObservable(), right.asObservable())
+//        .subscribe(onNext: { value in
+//        print(value)
+//        })
+//        .disposed(by: disposeBag)
+//    repeat {
+//        if(arc4random_uniform(2) == 0){
+//            if(!leftValues.isEmpty){
+//                left.onNext("Left: " + leftValues.removeFirst())
+//            }
+//        }else{
+//            if(!rightValues.isEmpty){
+//                right.onNext("Right: " + rightValues.removeFirst())
+//            }
+//        }
+//    }while (!leftValues.isEmpty || rightValues.isEmpty)
+//}
+
+//struct Student{
+//    var score: Variable<Int>
+//}
+
+//exampleOf(description: "concat one element") {
+//  let numbers = Observable.of(4, 5, 6)
+//
+//  Observable.just(1).concat(numbers)
+//    .subscribe(onNext:{
+//      print($0)
+//    })
+//}
 
 //exampleOf(description: "concat") {
 //  let koreans = Observable.of("태준", "지오", "로이")
