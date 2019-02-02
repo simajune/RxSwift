@@ -13,7 +13,15 @@ exampleOf(description: "Zip") {
     }
     
     let left = Observable<Weather> = Observable.of(.sunny, .cloudy, .cloudy)
+    let right = Observable.of("Lisbon", "Copenhagen", "London", "Madrid", "Vienna")
     
+    let observable = Observable.zip(left, right) { weather, city in
+        return "It's \(weather) in \(city)"
+    }
+    
+    observable.subscribe(onNext: { value in
+        print(value)
+    })
 }
 
 //exampleOf(description: "merge") {
