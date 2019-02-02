@@ -100,6 +100,27 @@ Left: Frankfurt
 <img src="https://github.com/simajune/RxSwift/blob/master/Documents/Ch9-3/2.png?raw=true" width="800px"/>
 
 ```swift
-
+exampleOf(description: "Zip") {
+    enum Weather {
+        case cloudy
+        case sunny
+    }
+    
+    let left: Observable<Weather> = Observable.of(.sunny, .cloudy, .cloudy)
+    let right = Observable.of("Lisbon", "Copenhagen", "London", "Madrid", "Vienna")
+    
+    let observable = Observable.zip(left, right) { weather, city in
+        return "It's \(weather) in \(city)"
+    }
+    observable.subscribe(onNext: { value in
+        print(value)
+    })
+}
+-----------------------------------------
+--- Example of: Zip ---
+It's sunny in Lisbon
+It's cloudy in Copenhagen
+It's cloudy in London
 ```
 
+* zip 연산자는 간단히 얘기하면 두개를 기다리고 두개가 다 와야만 발생한다. 발생한 것은 사라지고 새로운 것을 기다린다. 만약 하나만 오면 그것은 그냥 안쓰이게 된다.
