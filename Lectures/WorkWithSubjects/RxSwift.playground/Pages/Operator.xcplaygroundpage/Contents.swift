@@ -5,23 +5,142 @@ import RxSwift
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-
-exampleOf(description: "Zip") {
-    enum Weather {
-        case cloudy
-        case sunny
-    }
-    
-    let left: Observable<Weather> = Observable.of(.sunny, .cloudy, .cloudy)
-    let right = Observable.of("Lisbon", "Copenhagen", "London", "Madrid", "Vienna")
-    
-    let observable = Observable.zip(left, right) { weather, city in
-        return "It's \(weather) in \(city)"
-    }
-    observable.subscribe(onNext: { value in
+exampleOf(description: "scan") {
+    //1
+    let source1 = Observable.of(1, 3, 5, 7, 9)
+    let observable1 = source1.scan(0, accumulator: +)
+    let disposable1 = observable1.subscribe(onNext : { value in
         print(value)
     })
+    //2
+    let one = PublishSubject<Int>()
+    let observable2 = one.scan(0, accumulator: +)
+    let disposable2 = observable2.subscribe(onNext: { value in
+        print(value)
+    })
+    one.onNext(2)
+    one.onNext(4)
+    one.onNext(6)
+    one.onNext(8)
 }
+
+//exampleOf(description: "reduce") {
+//    //1
+//    let source1 = Observable.of(1, 3, 5, 7, 9)
+//    let observable1 = source1.reduce(0, accumulator: +)
+//    let disposable1 = observable1.subscribe(onNext : { value in
+//        print(value)
+//    })
+//    //2
+//    let one = PublishSubject<Int>()
+//    let observable2 = one.reduce(0, accumulator: +)
+//    let disposable2 = observable2.subscribe(onNext: { value in
+//        print(value)
+//    })
+//    one.onNext(2)
+//    one.onNext(4)
+//    one.onNext(6)
+//    one.onNext(8)
+//    one.onCompleted()
+//
+//    //3
+//    let source3 = Observable.of(1, 3, 5, 7, 9)
+//    let observable3 = source3.reduce(0, accumulator: { summary, newValue in
+//        print("summary: \(summary)")
+//        print("newValue: \(newValue)")
+//        return summary + newValue
+//    })
+//    let disposable3 = observable3.subscribe(onNext : { value in
+//        print(value)
+//    })
+//}
+
+//exampleOf(description: "SwitchLatest") {
+//    let one = PublishSubject<String>()
+//    let two = PublishSubject<String>()
+//    let three = PublishSubject<String>()
+//
+//    let source = PublishSubject<Observable<String>>()
+//
+//    let observable = source.switchLatest()
+//    let disposable = observable.subscribe(onNext: { value in
+//        print(value)
+//    })
+//
+//    one.onNext("ONE : First Event")
+//
+//    source.onNext(two)
+//
+//    two.onNext("TWO : First Event")
+//    one.onNext("ONE : Second Event")
+//
+//    source.onNext(three)
+//
+//    three.onNext("THREE First Event")
+//}
+
+//exampleOf(description: "amb") {
+//    let left = PublishSubject<String>()
+//    let right = PublishSubject<String>()
+//
+////    let observable = left.amb(right)
+//    let observable = right.amb(left)
+//    let disposable = observable.subscribe(onNext: { value in
+//        print(value)
+//    })
+//
+////    right.onNext("right Copenhagen")
+//    left.onNext("left Lisbon")
+//    right.onNext("right Copenhagen")
+//    left.onNext("left London")
+//    left.onNext("left Madrid")
+//    right.onNext("right Vienna")
+//
+//    disposable.dispose()
+//}
+
+//exampleOf(description: "sample") {
+//    //1
+//    let button = PublishSubject<Void>()
+//    let textField = BehaviorSubject<String>(value: "아이디를 입력해주세요.")
+////    let textField = PublishSubject<String>()
+//
+//    //2
+////    let observable = button.withLatestFrom(textField)
+//    let observable = textField.sample(button)
+//    let _ = observable.subscribe(onNext: { value in
+//        print(value)
+//    })
+//
+//    //3
+//    button.onNext(())
+//    button.onNext(())
+//    textField.onNext("Par")
+//    button.onNext(())
+//    textField.onNext("Pari")
+//    button.onNext(())
+//    textField.onNext("Paris")
+//    button.onNext(())
+//    button.onNext(())
+//}
+
+
+//exampleOf(description: "Zip") {
+//    enum Weather {
+//        case cloudy
+//        case sunny
+//    }
+//
+//    let left: Observable<Weather> = Observable.of(.sunny, .cloudy, .cloudy)
+//    let right = Observable.of("Lisbon", "Copenhagen", "London", "Madrid", "Vienna")
+//
+//    let observable = Observable.zip(left, right) { weather, city in
+//        return "It's \(weather) in \(city)"
+//    }
+//    observable.subscribe(onNext: { value in
+//        print(value)
+//    })
+//}
 
 //exampleOf(description: "merge") {
 //    let left = PublishSubject<String>()

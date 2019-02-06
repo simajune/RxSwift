@@ -57,5 +57,17 @@
 * [Prefixing and concatenating](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-1)
 * [Merging](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-2)
 * [Combining elements](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-3)
-* 
+* [Trigger](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-4)
+* [Switches](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-5)
+* [Combining elemetns within a sequence](https://github.com/simajune/RxSwift/tree/master/Documents/Ch9-6)
+
+### Chapter 10. Combining Operators in Practice
+
+* [Combining Operator 연습하기(추후 업데이트 예정)]()
+
+### Chapter 11. Time Based Operators
+
+* [Buffering Operators]()
+* [Time-shifting Operators]()
+* [Timer Operators]()
 
